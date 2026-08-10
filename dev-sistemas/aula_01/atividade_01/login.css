@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    background-color: white;
+}
+
+header {
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 10px 0 40px;
+}
+
+main {
+    width: 320px;
+    height: 315px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+section {
+    padding: 45px 24px 20px;
+}
+
+section h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+}
+
+form div {
+    margin-bottom: 8px;
+}
+
+form label {
+    display: inline-block;
+    width: 60px;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    width: 137px;
+    height: 16px;
+    padding: 1px 3px;
+    border: 1px solid black;
+}
+
+.lembrar {
+    margin-top: 4px;
+}
+
+.lembrar input[type="checkbox"] {
+    margin: 0 4px 0 2px;
+    vertical-align: middle;
+}
+
+.lembrar label {
+    width: auto;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+button {
+    display: block;
+    width: 100px;
+    height: 38px;
+    margin: 18px auto 15px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #aaa;
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form a {
+    display: block;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 0;
+    position: relative;
+    top: -28px;
+}

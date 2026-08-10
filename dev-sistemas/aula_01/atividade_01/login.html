@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro - SENAI</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Cadastro - SENAI</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Entrar no Sistema</h2>
+
+            <form>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="senha">Senha:</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <div class="lembrar">
+                    <input type="checkbox" id="lembrar" name="lembrar">
+                    <label for="lembrar">Lembrar</label>
+                </div>
+
+                <button type="submit">Entrar</button>
+
+                <a href="#">Esqueci minha senha</a>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        SENAI SIG-DF - 2026
+    </footer>
+
+</body>
+</html>
