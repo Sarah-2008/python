@@ -8,7 +8,7 @@ let total = precoProduto * quantidade;
 console.log("Valor total da compra:", total);
 console.log("Dobro do valor:", total * 2);
 console.log("Resto da divisão do total por 2:", total % 2);
-
+ 
 // 5. Variáveis booleanas
 let cupomValido = true;
 let freteGratis = false;
