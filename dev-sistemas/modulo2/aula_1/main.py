@@ -28,12 +28,7 @@ def listar_usuarios():
     return usuarios_db
 # GET /usuarios/(id) - retorna um usuario pelo ID
 # O (id) é um path parameter - FastAPI extrai da URL automaticamente
-@app.get('/usuarios/{usuario_id}')
-def buscar_usuario(usuario_id: int):
-    for usuario in usuarios_db:
-        if usuario['id'] == usuario_id:
-            return usuario
-    return {'erro': 'Usuario nao encontrado'}
+
 @app.get('/usuarios/busca')
 def buscar_por_nome(nome: str = ''):
     if not nome:
@@ -64,3 +59,10 @@ def info_geral():
         'ativos': sum (1 for u in usuarios_db if u ['ativo']),
         'inativos': sum (1 for u in usuarios_db if not u ['ativo']),
     }
+
+@app.get('/usuarios/{usuario_id}')
+def buscar_usuario(usuario_id: int):
+    for usuario in usuarios_db:
+        if usuario['id'] == usuario_id:
+            return usuario
+    return {'erro': 'Usuario nao encontrado'}
