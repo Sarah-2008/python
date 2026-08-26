@@ -41,3 +41,26 @@ def buscar_por_nome(nome: str = ''):
 
     filtrados = [u for u in usuarios_db if nome.lower() in u ['nome'].lower()]
     return filtrados
+
+@app.get('/usuarios/ativos')
+def listar_ativos():
+    return [u for u in usuarios_db if u ['ativo']]
+
+@app.get('/usuarios/inativos')
+def listar_inativos():
+    return [u for u in usuarios_db if not u ['ativo']]
+
+@app.get('/usuarios/cargo/{cargo}')
+def buscar_por_cargo(cargo: str):
+    return[
+        u for u in usuarios_db 
+        if cargo.lower() in u['cargo'].lower()
+    ]
+
+@app.get('/info')
+def info_geral():
+    return {
+        'total_usuarios': len(usuarios_db), 
+        'ativos': sum (1 for u in usuarios_db if u ['ativo']),
+        'inativos': sum (1 for u in usuarios_db if not u ['ativo']),
+    }
