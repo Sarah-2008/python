@@ -1,0 +1,40 @@
+from fastapi import FastAPI
+# Criar a instancia da aplicação
+app = FastAPI(
+title='API de Cadastro -- SENAI',
+description='Primeira API do curso de DS',
+version='0.1.0'
+)
+# Rota raiz -- GET /
+@app.get('/')
+def raiz():
+return {'mensagem': 'API funcionando!', 'versao': '0.1.0'}
+# Rota de status -- GET /status
+@app.get('/status')
+def status():
+return {'status': 'online', 'servico': 'API SENAI'}
+# Lista simulada de usuarios -- substitui o banco por enquanto
+usuarios_db = [
+{'id': 1, 'nome': 'Bruno Santos', 'cargo': 'DEV', 'ativo': True},
+{'id': 2, 'nome': 'Alice Lima', 'cargo': 'Design', 'ativo': True},
+{'id': 3, 'nome': 'Carlos Silva', 'cargo': 'QA', 'ativo': False},
+]
+# GET /usuarios - retorna todos os usuarios
+@app.get('/usuarios')
+def listar_usuarios():
+return usuarios_db
+# GET /usuarios/(id) - retorna um usuario pelo ID
+# O (id) é um path parameter - FastAPI extrai da URL automaticamente
+@app.get('/usuarios/{usuario_id}')
+def buscar_usuario(usuario_id: int):
+for usuario in usuarios_db:
+if usuario['id'] == usuario_id:
+return usuario
+return {'erro': 'Usuario nao encontrado'}
+@app.get('/usuarios/busca')
+def buscar_por_nome(nome: str = ''):
+if not nome:
+return usuarios_db
+
+filtrados = [u for u in usuarios_db if nome.lower() in u ['nome'].lower()]
+return filtrados
